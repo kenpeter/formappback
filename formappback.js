@@ -13,7 +13,7 @@ const config = require('./config'); // get our config file
 
 
 // model
-const Customer = require('./app/models/customer');
+const Customer = require('./models/customer');
 
 // port
 const port = process.env.PORT || 8015;
