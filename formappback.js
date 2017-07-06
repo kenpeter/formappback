@@ -11,13 +11,14 @@ const mongoose = require('mongoose');
 // the db and secret
 const config = require('./config'); // get our config file
 
+// lib
+const mylib = require('./lib/lib');
 
 // model
 const Customer = require('./models/customer');
 
 // port
-const port = process.env.PORT || 8015;
-
+const port = process.env.PORT || 8015; // used to create, sign, and verify tokens
 
 //
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -33,8 +34,8 @@ module.exports = app;
 
 // note if one of the routes not configure, will throw
 // TypeError('Router.use() requires middleware function but got a
-app.use('/', require('./routes/home'));
 app.use('/setup', require('./routes/setup'));
+app.use('/', require('./routes/home'));
 app.use('/api', require('./routes/api'));
 
 // listen
