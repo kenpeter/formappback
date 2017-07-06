@@ -10,7 +10,7 @@ const CustomerSchema = new Schema({
   name: String,
   age: Number,
   address: String,
-  active: Boolean,
+  active: Number,
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now }
 });
